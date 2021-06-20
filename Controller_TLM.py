@@ -7,6 +7,9 @@ def main_methods():
   while choice != 0:
     choice = View_TLM.main_menu()
     if choice==1:
+        email, password=View_TLM.user_validation()
+        Model_TLM.user_login(email, password)
+
         while choice != 0:
             choice = View_TLM.librarian_menu()
             if choice == 1:

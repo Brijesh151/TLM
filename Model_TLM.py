@@ -241,3 +241,27 @@ def fine_calc():
     conn.commit()
     conn.close() 
     wait = input('\n\n\nPress any key to continue.....')
+
+def user_login(email, password):
+    dbconfig=read_db_config()
+    conn=MySQLConnection(**dbconfig)
+    cursor = conn.cursor()
+    # email="email"
+    # password="password"
+    
+    sql = 'select role from user where email = '+email+' and password='+ password+';'
+    cursor.execute(sql)
+    result = cursor.fetchone()
+    for r in result:
+        print(r)
+    role=r
+    if role=='librarian':
+        print("Login Successful as Librarian")
+    elif role=='user': 
+        print("Login Unsuccessful as Librarian as you are a User. Please try again!")
+    else:
+        print("Invalid Login Details!")        
+    conn.close()
+    wait = input('\n\n\n Press any key to continue....')
+
+

@@ -10,6 +10,18 @@ def main_menu():
       print("Invalid Entry By You...Please Try Again!")
   return choice 
 
+def user_validation():
+
+  # Write a code to ask user name pwd and validate it with database.
+  # The user role will be decided based on the value of choice in main menu.
+  # login_details=dict()
+  # login_details["email"]=input("Please Enter Your User Name(Email)-->")
+  # login_details["password"]=input("Please Enter Your Password-->")
+  # return login_details
+  email = input("Please Enter Your User Name(Email)-->")
+  password = input("Please Enter Your Password-->")
+  return email, password
+
 def librarian_menu():
   print("Enter 1- Add User \nEnter 2- Add Books \nEnter 3- Update User Details"
   "\nEnter 4- Update Book Details \nEnter 5- Delete User \nEnter 6- Delete Books"
